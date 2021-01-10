@@ -930,6 +930,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Graphics.TextDisplayMenu_Ga
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Graphics.TextDisplayMenu_Sample", "Meadow.Foundation.Libraries_and_Frameworks\Graphics\TextDisplayMenu\Samples\Graphics.TextDisplayMenu_Sample\Graphics.TextDisplayMenu_Sample.csproj", "{931C2E57-BF1B-4DEB-A001-AB1AE92BDA3B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroGraphics_Sample", "Meadow.Foundation.Libraries_and_Frameworks\Graphics\MicroGraphics\Samples\MicroGraphics_Sample\MicroGraphics_Sample.csproj", "{B0372EDF-9904-4AC9-AFEE-DEFADFEC10C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2032,6 +2034,10 @@ Global
 		{931C2E57-BF1B-4DEB-A001-AB1AE92BDA3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{931C2E57-BF1B-4DEB-A001-AB1AE92BDA3B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{931C2E57-BF1B-4DEB-A001-AB1AE92BDA3B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B0372EDF-9904-4AC9-AFEE-DEFADFEC10C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0372EDF-9904-4AC9-AFEE-DEFADFEC10C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0372EDF-9904-4AC9-AFEE-DEFADFEC10C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0372EDF-9904-4AC9-AFEE-DEFADFEC10C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2493,6 +2499,7 @@ Global
 		{C962A8DB-8D12-4B36-B22B-9B938565ABF7} = {B90A7629-57D3-49FC-B6EA-BB5F2E7F93C1}
 		{F52EFDBF-3467-4068-8BE1-E94643ADE23B} = {E9BE2E5E-D4A3-484A-BBE8-DC6715B1E2C8}
 		{931C2E57-BF1B-4DEB-A001-AB1AE92BDA3B} = {E9BE2E5E-D4A3-484A-BBE8-DC6715B1E2C8}
+		{B0372EDF-9904-4AC9-AFEE-DEFADFEC10C7} = {0BB488AA-E23E-4697-BBD9-4A17B21BFCD7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AF7CA16F-8C38-4546-87A2-5DAAF58A1520}
