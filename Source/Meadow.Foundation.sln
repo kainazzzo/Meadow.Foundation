@@ -930,6 +930,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Graphics.TextDisplayMenu_Sa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meadow.Core", "..\..\Meadow.Core\source\Meadow.Core\Meadow.Core.csproj", "{9AD0FDFF-649D-4219-A11A-7E3647FC604F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sensors.Radio.Nfc.Nt3hxxx1", "Sensors.Radio.Nfc.Nt3hxxx1", "{853D52CA-8DAE-4698-8709-26048BFC0762}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{820C0312-5598-4574-8D02-94B8B69DCDE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sensors.Radio.Nfc.Nt3hxxx1", "Meadow.Foundation.Peripherals\Sensors.Radio.Nfc.Nt3hxxx1\Driver\Sensors.Radio.Nfc.Nt3hxxx1\Sensors.Radio.Nfc.Nt3hxxx1.csproj", "{7301CB29-24B7-40DC-95BF-4E57751C8C53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sensors.Radio.Nfc3xxx1_Sample", "Meadow.Foundation.Peripherals\Sensors.Radio.Nfc.Nt3hxxx1\Samples\Sensors.Radio.Nfc3xxx1_Sample\Sensors.Radio.Nfc3xxx1_Sample.csproj", "{7371888F-3B38-4F79-855A-D580A549B7C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2034,6 +2042,14 @@ Global
 		{9AD0FDFF-649D-4219-A11A-7E3647FC604F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AD0FDFF-649D-4219-A11A-7E3647FC604F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9AD0FDFF-649D-4219-A11A-7E3647FC604F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7301CB29-24B7-40DC-95BF-4E57751C8C53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7301CB29-24B7-40DC-95BF-4E57751C8C53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7301CB29-24B7-40DC-95BF-4E57751C8C53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7301CB29-24B7-40DC-95BF-4E57751C8C53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7371888F-3B38-4F79-855A-D580A549B7C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7371888F-3B38-4F79-855A-D580A549B7C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7371888F-3B38-4F79-855A-D580A549B7C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7371888F-3B38-4F79-855A-D580A549B7C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2495,6 +2511,10 @@ Global
 		{C962A8DB-8D12-4B36-B22B-9B938565ABF7} = {B90A7629-57D3-49FC-B6EA-BB5F2E7F93C1}
 		{F52EFDBF-3467-4068-8BE1-E94643ADE23B} = {E9BE2E5E-D4A3-484A-BBE8-DC6715B1E2C8}
 		{931C2E57-BF1B-4DEB-A001-AB1AE92BDA3B} = {E9BE2E5E-D4A3-484A-BBE8-DC6715B1E2C8}
+		{853D52CA-8DAE-4698-8709-26048BFC0762} = {64623FCA-6086-4F0A-A59D-2BF372EA38AA}
+		{820C0312-5598-4574-8D02-94B8B69DCDE7} = {853D52CA-8DAE-4698-8709-26048BFC0762}
+		{7301CB29-24B7-40DC-95BF-4E57751C8C53} = {853D52CA-8DAE-4698-8709-26048BFC0762}
+		{7371888F-3B38-4F79-855A-D580A549B7C7} = {820C0312-5598-4574-8D02-94B8B69DCDE7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AF7CA16F-8C38-4546-87A2-5DAAF58A1520}
