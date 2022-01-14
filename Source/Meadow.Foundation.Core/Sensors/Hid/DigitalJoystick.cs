@@ -11,91 +11,93 @@ namespace Meadow.Foundation.Sensors.Hid
 {
     public class DigitalJoystick : SensorBase<DigitalJoystickPosition>
     {
-        private readonly IButton topLeft;
-        private readonly IButton topRight;
-        private readonly IButton bottomRight;
-        private readonly IButton bottomLeft;
+        private readonly IButton left;
+        private readonly IButton up;
+        private readonly IButton right;
+        private readonly IButton down;
         private readonly bool isInverted;
         private DigitalJoystickPosition currentPosition = DigitalJoystickPosition.Center;
 
 
 
         private readonly object lockobj = new object();
-        
 
-        public DigitalJoystick(IButton topLeft, IButton topRight, IButton bottomRight, IButton bottomLeft, bool isInverted)
+
+        public DigitalJoystick(IButton left, IButton up, IButton right, IButton down, bool isInverted)
         {
-            this.topLeft = topLeft;
-            this.topRight = topRight;
-            this.bottomRight = bottomRight;
-            this.bottomLeft = bottomLeft;
+            this.left = left;
+            this.up = up;
+            this.right = right;
+            this.down = down;
+
             this.isInverted = isInverted;
 
-            this.topLeft.PressStarted += HandleButtons;
-            this.topRight.PressStarted += HandleButtons;
-            this.bottomRight.PressStarted += HandleButtons;
-            this.bottomLeft.PressStarted += HandleButtons;
+            this.left.PressStarted += HandleButtons;
+            this.up.PressStarted += HandleButtons;
+            this.right.PressStarted += HandleButtons;
+            this.down.PressStarted += HandleButtons;
 
-            this.topLeft.PressEnded += HandleButtons;
-            this.topRight.PressEnded += HandleButtons;
-            this.bottomRight.PressEnded += HandleButtons;
-            this.bottomLeft.PressEnded += HandleButtons;
+            this.left.PressEnded += HandleButtons;
+            this.up.PressEnded += HandleButtons;
+            this.right.PressEnded += HandleButtons;
+            this.down.PressEnded += HandleButtons;
         }
 
-        public DigitalJoystick(IDigitalInputController device, IPin topLeft, IPin topRight, IPin bottomRight, IPin bottomLeft, bool isInverted = false)
-: this(new PushButton(device, topLeft), new PushButton(device, topRight), new PushButton(device, bottomRight), new PushButton(device, bottomLeft), isInverted)
+        public DigitalJoystick(IDigitalInputController device, IPin left, IPin up, IPin right, IPin down, bool isInverted = false)
+: this(new PushButton(device, left), new PushButton(device, up), new PushButton(device, right), new PushButton(device, down), isInverted)
         {
         }
 
 
         private void HandleButtons(object sender, EventArgs e)
         {
-            bool topLeftPressed = !topLeft.State;
-            bool topRightPressed = !topRight.State;
-            bool bottomRightPressed = !bottomRight.State;
-            bool bottomLeftPressed = !bottomLeft.State;
+            bool leftPressed = !left.State;
+            bool upPressed = !up.State;
+            bool rightPressed = !right.State;
+            bool downPressed = !down.State;
             DigitalJoystickPosition oldPosition;
 
-            lock (lockobj) {
+            lock (lockobj)
+            {
                 oldPosition = currentPosition;
 
                 // It doesn't matter which button is pressed...
                 // just update the position based on current values
-                if (!topLeftPressed && !topRightPressed && !bottomRightPressed && !bottomLeftPressed)
+                if (!leftPressed && !upPressed && !rightPressed && !downPressed)
                 {
                     currentPosition = DigitalJoystickPosition.Center;
                 }
-                else if (topLeftPressed && topRightPressed)
-                {
-                    currentPosition = isInverted ? DigitalJoystickPosition.Down : DigitalJoystickPosition.Up;
-                }
-                else if (topRightPressed && bottomRightPressed)
-                {
-                    currentPosition = DigitalJoystickPosition.Right;
-                }
-                else if (bottomRightPressed && bottomLeftPressed)
-                {
-                    currentPosition = isInverted ? DigitalJoystickPosition.Up : DigitalJoystickPosition.Down;
-                }
-                else if (bottomLeftPressed && topLeftPressed)
-                {
-                    currentPosition = DigitalJoystickPosition.Left;
-                }
-                else if (topLeftPressed)
-                {
-                    currentPosition = isInverted ? DigitalJoystickPosition.DownLeft : DigitalJoystickPosition.UpLeft;
-                }
-                else if (topRightPressed)
+                else if (upPressed && rightPressed)
                 {
                     currentPosition = isInverted ? DigitalJoystickPosition.DownRight : DigitalJoystickPosition.UpRight;
                 }
-                else if (bottomRightPressed)
+                else if (downPressed && rightPressed)
                 {
                     currentPosition = isInverted ? DigitalJoystickPosition.UpRight : DigitalJoystickPosition.DownRight;
                 }
-                else if (bottomLeftPressed)
+                else if (downPressed && leftPressed)
                 {
                     currentPosition = isInverted ? DigitalJoystickPosition.UpLeft : DigitalJoystickPosition.DownLeft;
+                }
+                else if (upPressed && leftPressed)
+                {
+                    currentPosition = isInverted ? DigitalJoystickPosition.DownLeft : DigitalJoystickPosition.UpLeft;
+                }
+                else if (leftPressed)
+                {
+                    currentPosition = DigitalJoystickPosition.Left;
+                }
+                else if (upPressed)
+                {
+                    currentPosition = isInverted ? DigitalJoystickPosition.Down : DigitalJoystickPosition.Up;
+                }
+                else if (rightPressed)
+                {
+                    currentPosition = DigitalJoystickPosition.Right;
+                }
+                else if (downPressed)
+                {
+                    currentPosition = isInverted ? DigitalJoystickPosition.Up : DigitalJoystickPosition.Down;
                 }
 
                 var result = new ChangeResult<DigitalJoystickPosition>(currentPosition, oldPosition);
