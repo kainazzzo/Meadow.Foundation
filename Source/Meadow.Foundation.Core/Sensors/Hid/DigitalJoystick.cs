@@ -23,7 +23,7 @@ namespace Meadow.Foundation.Sensors.Hid
         private readonly object lockobj = new object();
         
 
-        public DigitalJoystick(IButton left, IButton up, IButton right, IButton down, bool isInverted)
+        public DigitalJoystick(IButton up, IButton down, IButton left, IButton right, bool isInverted)
         {
             this.left = left;
             this.up = up;
@@ -43,8 +43,8 @@ namespace Meadow.Foundation.Sensors.Hid
             this.down.PressEnded += HandleButtons;
         }
 
-        public DigitalJoystick(IDigitalInputController device, IPin left, IPin up, IPin right, IPin down, bool isInverted = false)
-: this(new PushButton(device, left), new PushButton(device, up), new PushButton(device, right), new PushButton(device, down), isInverted)
+        public DigitalJoystick(IDigitalInputController device, IPin up, IPin down, IPin left, IPin right, bool isInverted = false)
+: this(new PushButton(device, up), new PushButton(device, down), new PushButton(device, left), new PushButton(device, right), isInverted)
         {
         }
 
